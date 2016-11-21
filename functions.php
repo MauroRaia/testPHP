@@ -12,4 +12,5 @@ function Redirect($url, $permanent = false)
 
     exit();
 }
+
 ?>

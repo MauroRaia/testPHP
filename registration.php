@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <?php include('database.php'); ?>
-<?php include('test-input.php'); ?>
+<?php include('functions.php'); ?>
 <html>
 <head>
 </head>
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $liga = test_input($_POST["liga"]);
   $numero = test_input($_POST["numero"]);
   $data = array($nombre, $contraseña, $email, $liga, $numero);
-  insertUser($data);
+  insertUser($data, $db);
 }
 ?>
 
