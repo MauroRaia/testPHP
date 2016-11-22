@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
 <?php include('database.php'); ?>
 <?php include('functions.php'); ?>
 <html>
-<head>
-</head>
 <body>
 
 <?php
@@ -20,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   insertUser($data, $db);
 }
 ?>
-
+<div class="well">
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
   Nombre de usuario: <input type="text" name="nombre">
   <br><br>
@@ -35,6 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   Puntos chalensher: <input type="number" name="numero">
   <input type="submit" name="submit" value="Submit">
 </form>
-
+</div>
 </body>
 </html>

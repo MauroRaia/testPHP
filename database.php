@@ -54,5 +54,12 @@ EOF;
       $db->close();
 
     }
+    function checkHeroe($data, $db){
+      $query = "SELECT ID_HEROE FROM USUARIOS WHERE NOMBRE = '$data'";
+      $result = $db->querySingle($query);
+      $db->close();
+      return count($result)==0;
+
+    }
 $db = new MyDB();
 ?>
