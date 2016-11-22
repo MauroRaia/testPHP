@@ -34,6 +34,7 @@ EOF;
       $query = "SELECT NUMERO FROM USUARIOS WHERE NOMBRE = '$data[0]'";
       $result = $db->querySingle($query);
       return $result;
+      $db->close();
 
     }
     function getHeroe($data, $db){
@@ -43,8 +44,15 @@ EOF;
       foreach (Heroe::$instances as $obj){
         if ($obj->id == $result){
           return $obj;
+          $db->close();
         }
       }
+    }
+    function changeHeroe($data, $db, $nombre){
+      $query = "UPDATE USUARIOS SET ID_HEROE = '$data' WHERE NOMBRE = '$nombre'";
+      $result = $db->querySingle($query);
+      $db->close();
+
     }
 $db = new MyDB();
 ?>
